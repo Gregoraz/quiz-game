@@ -1,0 +1,33 @@
+services:
+  _defaults:
+    autowire: true
+
+  _instanceof:
+    Symfony\Component\Console\Command\Command:
+      tags: [ 'app.command' ]
+
+  App\:
+    resource: '../src/*'
+
+  Symfony\Component\Console\Application:
+    public: true
+
+  App\App:
+    class: App\App
+    public: true
+    arguments:
+      - !tagged_iterator app.command
+
+  App\QuestionProvider\QuestionProviderInterface:
+    class: App\QuestionProvider\TriviaQuestionProvider
+    public: true
+
+  App\Game\Game:
+    class: App\Game\Game
+
+  GuzzleHttp\Client:
+    public: true
+
+  App\Stats\StatsServiceInterface:
+    class: App\Stats\StatsService
+    public: true

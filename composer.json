@@ -1,0 +1,27 @@
+{
+    "name": "gregoraz/quiz-game",
+    "description": "Simple quiz game for 1-4 players",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Grzegorz Pietrzak",
+            "email": "gpietrzak93@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "7.4.*",
+        "symfony/console": "6.1.*",
+        "symfony/dotenv": "6.1.*",
+        "symfony/dependency-injection": "6.1.*",
+        "symfony/yaml": "6.1.*",
+        "symfony/config": "6.1.*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
